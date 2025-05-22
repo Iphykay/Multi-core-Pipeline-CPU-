@@ -1,2 +1,5 @@
 # Multi-core-Pipeline-CPU-
 The pipeline uses multiprocessing module in python to facilitate training, tuning and analyzing brain signals
+
+The Deep learning models are trained and features extracted from the last pooling. These features are used in training
+regular classifiers (Random Forest, ANN, SVM and KNN) to identify participants
