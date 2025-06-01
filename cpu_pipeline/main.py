@@ -10,7 +10,6 @@ Description:
    processors communicating via shared memory
 
 Authors:
-    Dr. Omer Muhammet Soysal
     Iphy Kelvin
 
 Date Created     : 08/01/2024
