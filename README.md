@@ -6,13 +6,13 @@ to image data.
 
 The brain signals are loaded in the:
 
-  loader.py
+    loader.py
 
 using subject, session, semester and stimulus name. The preprocessing stage occurs in the same module.
 
 The machine learning models and deep learning models are in:
 
-  network_rcs.py and rc_models.py
+    network_rcs.py and rc_models.py
 
 
 
