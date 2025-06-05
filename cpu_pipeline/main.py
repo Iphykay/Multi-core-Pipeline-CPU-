@@ -272,11 +272,11 @@ class MultiProcessing:
 
         Input:
         ------
+        idComb         : Combination ID to pull up subjects in a combination
+        ID             : id of the data
+        mdlClsRc       : regular classifier models
         mdlNameRc      : regular classiify names
-        i_mdl_lrnr     : function learner for each regular clasiifier
-        j_mdloutp      : function output for each regular classifier
         bandID         : name of the band; it is kept for future use
-        comBID         : Combination ID to pull up subjects in a combination
         savebndtime    : dataframe to save the time taken for each model to finish
         savebndhpt     : dataframe to save the hyperparameters 
         savebndhpttyp1 : dataframe to save the hyperparameters for the cross
