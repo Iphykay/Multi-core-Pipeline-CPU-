@@ -492,32 +492,31 @@ def main():
         else: multiPrcess.getData(None, True, bandID) #
          
 
-        # # Regular Classifiers
-        # idComb = -1
-        # rc_anlys_cmb = dict()
+        # Regular Classifiers
+        idComb = -1
+        rc_anlys_cmb = dict()
 
-        # # multiPrcess.rc_models(idComb, pathGrp,KNN,'KNN',bandID,savebndtime, savebndhpt, savebndhpt1, trckPrsLkUp, ('sb328','sb381'))
-        # print('ProcessPoolExecutor for RC MODELS........', flush=True)
-        # for i_ck, chnk in enumerate(cmbnChnks['rc']):
-        #     with concurrent.futures.ProcessPoolExecutor() as executor_RC:
-        #         for idCmbCh, sbComb in enumerate(chnk):
-        #             print(f'{idCmbCh}/ {i_ck}: {sbComb} begins...', flush=True)
-        #             idComb += 1
-        #             if useViewModel_ui: pathGrp = f'{ViewUsed_ui}\\G{idComb}' 
-        #             else: pathGrp = f'G{idComb}'
-        #             rc_anlys = [executor_RC.submit(multiPrcess.rc_models, idComb, pathGrp, mdlClsRc, mdlNameRc, bandID, savebndtime, 
-        #                                            savebndhpt, savebndhpt1, trckPrsLkUp, sbComb)
-        #                         for mdlClsRc,mdlNameRc in zip(RCLst_ui,nameRCLst_ui)]
-        #             rc_anlys_cmb[idComb] = rc_anlys
-        #         # for 
+        print('ProcessPoolExecutor for RC MODELS........', flush=True)
+        for i_ck, chnk in enumerate(cmbnChnks['rc']):
+             with concurrent.futures.ProcessPoolExecutor() as executor_RC:
+                 for idCmbCh, sbComb in enumerate(chnk):
+                     print(f'{idCmbCh}/ {i_ck}: {sbComb} begins...', flush=True)
+                     idComb += 1
+                     if useViewModel_ui: pathGrp = f'{ViewUsed_ui}\\G{idComb}' 
+                     else: pathGrp = f'G{idComb}'
+                     rc_anlys = [executor_RC.submit(multiPrcess.rc_models, idComb, pathGrp, mdlClsRc, mdlNameRc, bandID, savebndtime, 
+                                                    savebndhpt, savebndhpt1, trckPrsLkUp, sbComb)
+                                 for mdlClsRc,mdlNameRc in zip(RCLst_ui,nameRCLst_ui)]
+                     rc_anlys_cmb[idComb] = rc_anlys
+                  # for
 
-        #         print('Waiting for result......', flush=True)
-        #         concurrent.futures.wait(rc_anlys,timeout=60)
+                 print('Waiting for result......', flush=True)
+                 concurrent.futures.wait(rc_anlys,timeout=60)
 
-        #         #Keep track of processes
-        #         trackPro[f'regcls_anlys_{i_ck}'] = trackProcess(rc_anlys)
-        #     # with
-        # # for
+                 #Keep track of processes
+                 trackPro[f'regcls_anlys_{i_ck}'] = trackProcess(rc_anlys)
+             # with
+         # for
 
         idComb = -1
         ntwrk_lrnrs = dict()
