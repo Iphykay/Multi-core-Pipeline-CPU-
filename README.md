@@ -16,7 +16,7 @@ The machine learning models and deep learning models are in:
 
     network_rcs.py and rc_models.py
 
-The Deep learning models are trained using the image data and features extracted 
+The Deep learning models (DCNN, AE) are trained using the image data and features extracted 
 from the last pooling layers.  These features are used in training regular classifiers 
 (Random Forest, ANN, SVM and KNN) to identify participants.
 
