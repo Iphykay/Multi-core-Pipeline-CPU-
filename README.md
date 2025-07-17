@@ -1,6 +1,6 @@
 # Multi-core-Pipeline-CPU
 The pipeline uses multiprocessing module in python to facilitate training, tuning and 
-analyzing brain signals.
+analyzing EEG brain signals.
 
 The pipeline is an end-to-end, that takes the brain signal, applies preprocessing and 
 converts the 1D time series to image data. 
